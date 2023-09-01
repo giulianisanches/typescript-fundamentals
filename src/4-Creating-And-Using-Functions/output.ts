@@ -156,4 +156,24 @@ function runTheLearningSamples() {
   pineapple = createProductWithDefaults('pineapple', 'pine-apple.jpg');
   mango = createProductWithDefaults('mango');
   console.log(pineapple, mango);
+
+  function buildAddress(
+    street: string,
+    city: string,
+    ...restOfAddress: string[]
+  ) {
+    const address = `${street} ${city} ${restOfAddress.join(' ')}`;
+    return address;
+  }
+
+  const someAddress = buildAddress(
+    '1 lois lane',
+    'smallville',
+    'apt 101',
+    'area 51',
+    'mystery country',
+  );
+
+  console.log(`${prefix} Rest parameters`);
+  console.log(someAddress);
 }
